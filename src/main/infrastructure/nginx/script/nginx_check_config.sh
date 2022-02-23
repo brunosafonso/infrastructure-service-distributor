@@ -61,7 +61,7 @@ done
 # Test if exist any http2 listening to port 80
 ${DEBUG} && echo "Checking http2 on vhost files"
 
-for file in $(grep -Ro "80[[:blank:]]\+http2" $VHOST_DIR | cut -d ":" -f1); do
+for file in $(grep -R "listen[[:blank:]]\+80" $VHOST_DIR | grep "http2" | cut -d ":" -f1); do
    echo "Moving file $file to ERR due invalid http2 directive"
    mv $file $file.err
 done
