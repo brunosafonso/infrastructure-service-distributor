@@ -8,6 +8,7 @@ DEBUG=${DEBUG:=false}
 DEBUG_OPT=
 SKIP_RELOAD=false
 VHOST_DIR="/etc/nginx/vhost.d/"
+SKIP_RELOAD_PARAM=""
 
 # For each argument.
 while :; do
